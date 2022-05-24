@@ -3,7 +3,7 @@ import './App.css';
 import MLContainer from './components/MLContainer/MLContainer';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 const App = () => {
   const [show, setShow] = useState(true)

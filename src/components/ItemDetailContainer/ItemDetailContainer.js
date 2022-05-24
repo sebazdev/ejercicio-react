@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { getProductById } from "../asyncmock"
+import { getProductById } from "../../asyncmock"
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState()
