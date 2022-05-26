@@ -1,6 +1,9 @@
 import './Item.css'
+import { Link, useNavigate } from 'react-router-dom'
 
-const Item = ({id, title, thumbnail, price, handlePage}) => {
+const Item = ({id, title, thumbnail, price}) => {
+    const navigate = useNavigate()
+
     return (
         <article className="CardItem">
             <header className="Header">
@@ -17,7 +20,8 @@ const Item = ({id, title, thumbnail, price, handlePage}) => {
                 </p>
             </section>           
             <footer className='ItemFooter'>
-                <button onClick={() => handlePage({path: 'detail', id})}>Ver Detalle</button>
+                <Link to={`/detail/${id}`}>Ver detalle</Link>
+                <button onClick={() => navigate('/about')}>About</button>
             </footer>
         </article>
     )

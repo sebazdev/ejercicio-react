@@ -16,14 +16,22 @@ export const getProducts = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(products)
-        }, 3000)
+        }, 500)
     })
 }
 
-export const getProductById = () => {
-    return new Promise((resolve) => {
+export const getProductById = (id) => {
+    return new Promise (resolve => {
         setTimeout(() => {
-            resolve(products[0])
-        }, 3000)
+            resolve(products.find(prod => prod.id === id))
+        }, 500)
+    })
+}
+
+export const getProductsByCategory = (categoryId) => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(products.filter(prod => prod.category === categoryId))
+        }, 500)
     })
 }
