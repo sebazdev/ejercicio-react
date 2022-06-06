@@ -1,12 +1,14 @@
 import './ItemList.css'
 import Item from "../Item/Item"
 
-const ItemList = ({ products, handlePage }) => {
+const ItemList = ({ products }) => {
+    //Componente encargado de visualizar la lista de productos
+    
     return (
         <ul className='ListGroup'>
             {products.map(prod => {
                 return (
-                    <Item key={prod.id} {...prod} handlePage={handlePage}/>
+                    <Item />
                 )
             })}
         </ul>

@@ -1,30 +1,19 @@
 import './ItemCount.css'
-import { useState } from 'react'
 
-const ItemCount = ({stock = 0, initial = 1, onAdd})=> {
-   const [quantity, setQuantity] = useState(initial)
+const ItemCount = ({onAdd})=> {
+   //Componente encargado de seleccionar cantidad de productos a agregar.
 
-   const increment = () => {
-       if(quantity < stock) {
-           setQuantity(quantity+1)
-       }
-   }
-
-   const decrement = () => {
-       if(quantity > 1) {
-           setQuantity(quantity - 1)
-       }     
-   }
-
+   //La funcion recibida por props en ejecutada al hacer click en el boton,
+   //Esa funcion debe recibir como parametro la cantidad seleccionada.
    return(
        <div className='Counter'>          
             <div style={{ display: 'flex', justifyContent: 'center'}}>
-                <button className="Button" onClick={decrement}>-</button>
-                <h4 className='Number'>{quantity}</h4>
-                <button className="Button" onClick={increment}>+</button>
+                <button className="Button">-</button>
+                <h4 className='Number'>0</h4>
+                <button className="Button">+</button>
             </div>
             <div>
-                <button className="Button" onClick={() => onAdd(quantity)}>Agregar al carrito</button>
+                <button className="Button" onClick={() => onAdd()}>Agregar al carrito</button>
             </div>
        </div>
    )

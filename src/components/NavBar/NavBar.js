@@ -1,20 +1,18 @@
 import './NavBar.css'
-import { Link, NavLink } from 'react-router-dom'
+
 
 const NavBar = () => {
+    //Utilizar libreria y componente necesario para poder navegar entre las vistas.
+    //Se debe mostrar CartWidget unicamente si hay un usuario loggeado
+    //Si hay un usuario logueado cambiar el boton de Login por uno de Logout que limpie el estado global de usuario.
+
     return(
         <nav className='NavBar'>
-            <Link to='/'>
-                <h3>Ecommerce</h3>
-            </Link>
-            <div className='Categories'>
-                {/* <button className='Option'>Celulares</button>
-                <button className='Option'>Tablets</button>
-                <button className='Option'>Notebooks</button> */}
-                
-                <Link to='/about' className='Option'>About</Link>
-                <NavLink to='/category/celular' className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Celulares</NavLink>
-                <NavLink to='/category/tablet' className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>Tablets</NavLink>
+            <h3>Ecommerce</h3>
+            <div className='Categories'>            
+                <button className='Option'>Products</button>
+                <button className='Option'>About us</button>
+                <button className='Option'>Login</button>
             </div>
         </nav>
     )

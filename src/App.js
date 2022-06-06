@@ -1,33 +1,24 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './App.css';
-import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import NavBar from './components/NavBar/NavBar';
+import Login from './components/Login/Login'
+import About from './components/About/About';
 
 const App = () => {
-  // const [page, setPage] = useState({ path: 'list', id: '1'})
-  
+  //Routear app
+
+  //Siempre debe mostrarse el NavBar
+  //En '/' debe mostrarse el listado de productos
+  //En '/about' debe mostrarse el componente About
+  //En '/login' debe mostrase el formulario de Login
 
   return (
     <div className="App">
-      
-      {/* <div>
-        <button onClick={() => setPage({ ...page, path: 'list'})}>list</button>
-        <button onClick={() => setPage({ path: 'detail', id: '1'})}>detail</button>
-      </div>
-      { page.path === 'list' && <ItemListContainer handlePage={setPage}/>}
-      { page.path === 'detail' && <ItemDetailContainer productId={page.id}/>} */}
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path='/' element={<ItemListContainer />}/>
-          <Route path='/detail/:productId' element={<ItemDetailContainer />} />
-          <Route path='/category/:categoryId' element={<ItemListContainer />} />
-          <Route path='/about' element={<h1>About</h1>} />
-          <Route path='*' element={<Navigate to='/'/>} />
-        </Routes>
-      </BrowserRouter>
+      <NavBar />
+      <ItemListContainer />
+      <About />
+      <Login />
     </div>    
   );
 }
