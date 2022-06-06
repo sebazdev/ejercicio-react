@@ -6,6 +6,10 @@
 En cada una de las card de productos del listado debe mostrarse un contador de productos
 unicamente si hay un usuario logueado sino un boton que dirija a la vista de Login.
 
+La documentacion de la Api es la siguiente:
+
+[API Search MercadoLibre](https://api.mercadolibre.com/sites/MLA/search)
+
 Si hay un usuario logueado, el usuario debe poder seleccionar una cantidad y al 
 presionar en Agregar al Carrito se debe mostrar en consola el nombre del producto y cantidad.
 
