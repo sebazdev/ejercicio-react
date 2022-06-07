@@ -1,6 +1,6 @@
-import './ItemDetail.css'
+import './Item.css'
 
-const ItemDetail = ({ id, title, thumbnail, category_id, price }) => {
+const Item = ({ id, title, thumbnail, category_id, price }) => {
     //Componente encargado de mostrar el detalle de productos
 
     //Debe mostrarse el contador unicamente si hay un usuario logueado.
@@ -33,4 +33,4 @@ const ItemDetail = ({ id, title, thumbnail, category_id, price }) => {
     )
 }
 
-export default ItemDetail
+export default Item
