@@ -1,9 +1,11 @@
 import React from 'react'
 import './App.css';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import NavBar from './components/NavBar/NavBar';
-import Login from './components/Login/Login'
-import About from './components/About/About';
+
+import { BrowserRouter } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+
+import AppRouter from './routes/AppRouter';
 
 const App = () => {
   //Routear app
@@ -15,10 +17,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <NavBar />
-      <ItemListContainer />
-      <About />
-      <Login />
+      <BrowserRouter>
+        <AuthProvider>
+        <NavBar />
+          <AppRouter />
+        </AuthProvider>
+      </BrowserRouter>
     </div>    
   );
 }
